@@ -8,6 +8,17 @@
 
       alert("You opened the popup!");
 
+      var random_rgb_color = [
+        Math.floor(Math.random() * 256),
+        Math.floor(Math.random() * 256),
+        Math.floor(Math.random() * 256)
+      ];
+
+      var brought_to_you_by_the_letter = [ 'A', 'B', 'C', 'D', 'E' ][Math.floor(Math.random() * 5)];
+
+      chrome.browserAction.setBadgeText({ text: brought_to_you_by_the_letter });
+      chrome.browserAction.setBadgeBackgroundColor({ color: random_rgb_color });
+
       function update_date(){
         document.getElementById("init_date").innerHTML = window.init_date.toString();
       }

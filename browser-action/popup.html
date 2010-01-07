@@ -1,6 +1,20 @@
 <html>
-  <head></head>
-  <body>
+  <head>
+    <script type="text/javascript">
+      // this gets evaluated each and every time the popup is opened.
+      // window.init_date is ALWAYS null because it is not persisted.
+      if (window.init_date == null)
+        window.init_date = Date();
+
+      alert("You opened the popup!");
+
+      function update_date(){
+        document.getElementById("init_date").innerHTML = window.init_date.toString();
+      }
+    </script>
+  </head>
+  <body onLoad="update_date();">
     <p>Hello from Browser Action!</p>
+    <p id="init_date"></p>
   </body>
 </html>

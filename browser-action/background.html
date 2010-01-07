@@ -1,0 +1,12 @@
+<html>
+  <head>
+    <script type="text/javascript">
+      alert("background page loaded.");
+
+      chrome.browserAction.onClicked.addListener(function(tab){
+        alert("Hello from the background page ... you clicked the browser action button!");
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

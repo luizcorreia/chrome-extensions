@@ -9,6 +9,9 @@
 
   "browser_action": {
       "default_icon": "icon.png",
-      "popup":        "popup.html"
-  }
+      "popup":        "popup.html" // if you disable this, the background page's onClick will work.
+                                   // you can either register an onClick listener *OR* you can use a popup.
+  },
+
+  "background_page": "background.html"
 }

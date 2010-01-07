@@ -1,0 +1,12 @@
+{
+  "name":        "Sample Content Script",
+  "version":     "0.1",
+  "description": "Sample Content Script (description)",
+
+  "content_scripts": [
+    {
+      "matches": ["http://*/*"],
+      "js":      ["content.js"]
+    }
+  ]
+}

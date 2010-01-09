@@ -1,0 +1,12 @@
+<html>
+  <head>
+    <script type="text/javascript">
+      chrome.extension.onRequest.addListener(function(message, sender, sendResponse){
+        // alert("the background page received this from the content script: " + JSON.stringify(message));
+        console.log("received message");
+        console.log(message);
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

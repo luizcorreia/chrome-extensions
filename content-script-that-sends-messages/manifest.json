@@ -1,0 +1,14 @@
+{
+  "name":        "Sample Content Script that sends Messages to a Background Page",
+  "version":     "0.1",
+  "description": "Sample Content Script (description ...)",
+
+  "content_scripts": [
+    {
+      "matches": ["http://*/*"],
+      "js":      ["content.js"]
+    }
+  ],
+
+  "background_page": "background.html"
+}

@@ -1,0 +1,21 @@
+{
+  "name":        "Sample Page Action",
+  "version":     "0.1",
+  "description": "Sample Page Action (description)",
+
+  "icons": {
+    "128": "app-icon.png"
+  },
+
+  "page_action": {
+      "default_icon": "icon.png",
+      "popup":        "popup.html" // if you disable this, the background page's onClick will work.
+                                   // you can either register an onClick listener *OR* you can use a popup.
+  },
+
+  "background_page": "background.html",
+
+  "permissions": [
+    "tabs"
+  ]
+}

@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <script type="text/javascript">
+      alert("background page loaded for page action ... icon should be visible.");
+
+      // get the selected tab (and display the page action icon in it)
+      chrome.tabs.getSelected(null, function(tab) {
+        tab_id = tab.id;
+
+        // show the icon half of the time
+        if (Math.floor(Math.random() * 2) == 1)
+          chrome.pageAction.show(tab_id);
+        else
+          chrome.pageAction.hide(tab_id);
+      });
+
+      // keep track of the current tab and, when you change tabs, display the page action icon in it
+      var tab_id = null;
+      chrome.tabs.onSelectionChanged.addListener(function(tab_id) {
+        tab_id = tab_id;
+
+        // show the icon half of the time
+        if (Math.floor(Math.random() * 2) == 1)
+          chrome.pageAction.show(tab_id);
+        else
+          chrome.pageAction.hide(tab_id);
+      });
+
+      chrome.pageAction.onClicked.addListener(function(tab){
+        alert("Hello from the background page ... you clicked the page action button!");
+      });
+
+      /*
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", 'some url', true);
+      xhr.send();
+      */
+    </script>
+  </head>
+  <body></body>
+</html>

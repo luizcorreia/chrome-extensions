@@ -1,7 +1,7 @@
 {
-  "name":        "Sample Content Script with Keyboard Shortcuts",
+  "name":        "Simple Delicious bookmarking plugin (CTRL+/)",
   "version":     "0.1",
-  "description": "Sample Content Script with Keyboard Shortcuts (description)",
+  "description": "Simple Delicious bookmarking plugin.  Just press CTRL + /",
 
   "background_page": "background.html",
 

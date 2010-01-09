@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <script type="text/javascript">
+      chrome.extension.onRequest.addListener(function(message, sender, sendResponse){
+        var location  = encodeURIComponent(message.location.href);
+        var title     = encodeURIComponent(message.title);
+        var popup_url = 'http://delicious.com/save?url=' + location + '&title=' + title + '&v=5&noui=1&jump=doclose';
+        var options   = 'location=yes,links=no,scrollbars=no,toolbar=no,width=550,height=550';
+      
+        window.open(popup_url, 'Bookmark on Deli.cio.us', options);
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name":        "Sample Content Script with Keyboard Shortcuts",
+  "version":     "0.1",
+  "description": "Sample Content Script with Keyboard Shortcuts (description)",
+
+  "background_page": "background.html",
+
+  "content_scripts": [
+    {
+      "matches": [ "http://*/*", "https://*/*" ],
+      "js":      ["content.js"]
+    }
+  ],
+
+  "permissions": ["tabs"]
+}

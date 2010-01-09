@@ -1,0 +1,12 @@
+{
+  "name":        "Sample Content Script with jQuery",
+  "version":     "0.1",
+  "description": "Sample Content Script with jQuery (description)",
+
+  "content_scripts": [
+    {
+      "matches": ["http://github.com/*/*", "https://github.com/*/*"],
+      "js":      ["jquery.js", "content.js"]
+    }
+  ]
+}

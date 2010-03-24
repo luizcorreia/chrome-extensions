@@ -9,6 +9,7 @@ window.addEventListener("keyup", function(e){
     var unique_id = textarea.id;
     if (unique_id == '') unique_id = textarea.name;
     if (unique_id == '') unique_id = textarea.className;
+    unique_id = location.href + ' ' + unique_id;
     
     if (textareas_text == null) textareas_text = {};
     textareas_text[unique_id] = textarea.value;

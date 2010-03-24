@@ -1,0 +1,12 @@
+{
+  "name":        "TextArea History",
+  "version":     "0.1",
+  "description": "Keeps track of the last text you entered into any given textarea",
+
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js":      ["jquery.js", "content.js"]
+    }
+  ]
+}

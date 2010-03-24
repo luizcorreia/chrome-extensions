@@ -4,17 +4,27 @@ var saving         = false;
 
 window.addEventListener("keyup", function(e){
   if (e.srcElement.nodeName == 'TEXTAREA'){
+    
     var textarea  = e.srcElement;
 
     var unique_id = textarea.id;
     if (unique_id == '') unique_id = textarea.name;
     if (unique_id == '') unique_id = textarea.className;
     unique_id = location.href + ' ' + unique_id;
-    
-    if (textareas_text == null) textareas_text = {};
-    textareas_text[unique_id] = textarea.value;
 
-    if (save_interval == null) save_interval = setInterval(save, 10000);
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 72){
+      // Ctrl-Shift-H (history)
+      if (localStorage['textarea_history'] != null){
+        var history = JSON.parse(localStorage['textarea_history']);
+        if (history[unique_id] != null)
+          alert(history[unique_id]);
+      }
+    } else {
+      // Mark the text to be saved
+      if (textareas_text == null) textareas_text = {};
+      textareas_text[unique_id] = textarea.value;
+      if (save_interval == null) save_interval = setInterval(save, 10000);
+    }
   }
 }, false);
 

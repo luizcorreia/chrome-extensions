@@ -1,0 +1,12 @@
+<html>
+  <head>
+    <script type="text/javascript">
+      var messagesAndSenders = [];
+
+      chrome.extension.onRequestExternal.addListener(function(message, sender, sendResponse){
+        messagesAndSenders[messagesAndSenders.length] = [message, sender];
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

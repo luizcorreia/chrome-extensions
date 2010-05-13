@@ -1,0 +1,12 @@
+<html>
+  <head>
+    <script type="text/javascript">
+      chrome.extension.sendRequest('fpofggdjooifkhmlhehfnjehhpkifmaj', { name: 'My Cool Extension' });
+
+      chrome.extension.onRequest.addListener(function(message, sender, sendResponse){
+        sendResponse({ message: 'hello!' });
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

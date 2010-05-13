@@ -1,0 +1,5 @@
+{
+  "name":            "Talking Extension",
+  "version":         "0.1",
+  "background_page": "background.html"
+}

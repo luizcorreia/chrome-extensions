@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <script type="text/javascript">
+      function log(message){
+        document.getElementById('log').innerHTML += message + "<br />";
+      }
+
+      function select(url){
+        document.getElementById('menu').style.display = 'none';
+        document.getElementById('frame').src = url;
+        document.getElementById('frame').style.display = 'block';
+      }
+
+      function init(){
+        var messagesAndSenders = chrome.extension.getBackgroundPage().messagesAndSenders;
+        for(var i in messagesAndSenders){
+          var message  = messagesAndSenders[i][0];
+          var sender   = messagesAndSenders[i][1];
+          var id       = sender.id;
+          var name     = message.name;
+          var iconUrl  = 'chrome-extension://' + id + '/icon.png';
+          var popupUrl = 'chrome-extension://' + id + '/popup.html';
+
+          log('<a href="#" onClick="select(\'' + popupUrl + '\');"><img src="' + iconUrl + '" />' + name + '</a>');
+        }
+      }
+    </script>
+  </head>
+  <body onLoad="init();" style="width: 350px;">
+    <div id="menu">
+      <p>Hello from Browser Action!</p>
+      <p id="log"></p>
+    </div>
+    <iframe id="frame" src="" width="100%" style="display: none;" scrolling="auto" frameborder="0" />
+  </body>
+</html>

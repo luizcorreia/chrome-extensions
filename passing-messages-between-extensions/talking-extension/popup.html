@@ -1,0 +1,13 @@
+<html>
+  <head>
+    <script type="text/javascript">
+      chrome.extension.sendRequest({ whatever: null }, function(response){
+        document.getElementById('log').innerHTML = 'Response message: ' + response.message;
+      });
+    </script>
+  </head>
+  <body onLoad="" style="width: 250px;">
+    <p>Hello from the child browser action</p>
+    <p id="log"></p>
+  </body>
+</html>

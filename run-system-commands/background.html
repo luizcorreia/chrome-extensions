@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <script type="text/javascript">
+      // example usage:
+      //
+      //   chrome.extension.sendRequest('id of this extension', { command: 'ls', proxy: 'http://localhost:3000/' });
+      //
+      chrome.extension.onRequestExternal.addListener(function(message, sender, sendResponse){
+        var url = message.proxy + '?command=' + encodeURI(message.command);
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", url, true);
+        xhr.onreadystatechange = function(){
+          if (xhr.readyState == 4){
+            var response = JSON.parse(xhr.responseText);
+            sendResponse(response);
+          }
+        }
+        xhr.send(); 
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <script type="text/javascript">
+      function runCommand(){
+        var proxy   = 'http://localhost:9393/';
+        var command = document.getElementById('command').value;
+        chrome.extension.sendRequest('mlkalkamkpmhmedfalikpnddlmfnafhm', { command: command, proxy: proxy }, function(response){
+          document.getElementById('output').innerHTML = response.stdout;
+        });
+      }
+    </script>
+  </head>
+  <body style="width: 500px;">
+    <div style="overflow: auto;">
+      <p>Hello from Browser Action the runs system commands!</p>
+
+      <form onSubmit="runCommand(); return false;">
+        <label for="command">Command:</label>
+        <input id="command" type="text" />
+        <input type="submit" value="Run Command" />
+      </form>
+
+      <pre id="output"></pre>
+    </div>
+  </body>
+</html>
